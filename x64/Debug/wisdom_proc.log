@@ -1,2 +1,5 @@
 ﻿  source.cpp
+  wisdom_proc.cpp
+  Создание кода...
+  LINK : не найден или не выполнена сборка C:\Users\Елена\Documents\GitHub\wisdom_proc\x64\Debug\wisdom_proc.exe при последней инкрементной компоновке; выполняется полная компоновка
   wisdom_proc.vcxproj -> C:\Users\Елена\Documents\GitHub\wisdom_proc\x64\Debug\wisdom_proc.exe

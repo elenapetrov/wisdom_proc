@@ -1,16 +1,16 @@
 Filled container. 
 Container contents 4 elements.
-1: Text: proverka_proverka.
-It is a saying. Country: Russia
-Count of punctuation marks: 1
+1: Text: test...test?
+It is a saying. Country: USA
+count of punctuation marks: 4
 2: Text: test1,test1!
 It is an aphorism. Author: me
-Count of punctuation marks: 2
-3: Text: test...test?
-It is a saying. Country: USA
-Count of punctuation marks: 4
+count of punctuation marks: 2
+3: Text: proverka_proverka.
+It is a saying. Country: Russia
+count of punctuation marks: 1
 4: Text: proverka1;proverka1
 It is an aphorism. Author: not_me
-Count of punctuation marks: 1
+count of punctuation marks: 1
 Empty container. 
 Container contents 0 elements.
