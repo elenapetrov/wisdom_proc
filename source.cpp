@@ -48,6 +48,7 @@ void OutWisdom(ofstream& ofst, Node* container)
 		//aw = (aphorism_wisdom*)(c->current->thought->aphorism);
 		//aw = (aphorism_wisdom*)(c->current->thought);
 		Out(ofst, container->thought->a);
+		CountSymbolsAphorism(ofst, container->thought->a);
 	}
 	else
 	{
@@ -55,6 +56,7 @@ void OutWisdom(ofstream& ofst, Node* container)
 		//sw = (saying_wisdom*)(c->current->thought->saying);
 		//sw = (saying_wisdom*)(c->current->thought);
 		Out(ofst, container->thought->s);
+		CountSymbolsSaying(ofst, container->thought->s);
 	}
 }
 
@@ -109,4 +111,25 @@ void OutCont(ofstream& ofst, container* c) {
 		c->current = c->current->next;
 		i++;
 	} while (c->current != c->head);
+}
+int CountSymbolsAphorism(ofstream& ofst, aphorism_wisdom& a) {
+	int cnt = 0;
+	string symbols = ".,!?;";
+	for (int i = 0; i < a.text.length(); i++)
+	{
+		if (symbols.find(a.text[i]) < symbols.length())cnt++;
+	}
+	ofst << "Count of punctuation marks: " << cnt << endl;
+	return cnt;
+}
+
+int CountSymbolsSaying(ofstream& ofst, saying_wisdom& s) {
+	int cnt = 0;
+	string symbols = ".,!?;";
+	for (int i = 0; i < s.text.length(); i++)
+	{
+		if (symbols.find(s.text[i]) < symbols.length())cnt++;
+	}
+	ofst << "Count of punctuation marks: " << cnt << endl;
+	return cnt;
 }

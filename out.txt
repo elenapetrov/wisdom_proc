@@ -1,16 +1,16 @@
 Filled container. 
-Container contents 6 elements.
-1: Text: qqqqqqqqq
+Container contents 4 elements.
+1: Text: proverka_proverka.
 It is a saying. Country: Russia
-2: Text: abc
-It is an aphorism. Author: author
-3: Text: qwerty
+Count of punctuation marks: 1
+2: Text: test1,test1!
+It is an aphorism. Author: me
+Count of punctuation marks: 2
+3: Text: test...test?
 It is a saying. Country: USA
-4: Text: xyz
-It is an aphorism. Author: author2
-5: Text: 12345
-It is an aphorism. Author: pushkin
-6: Text: 12345_678910
-It is a saying. Country: Russia
+Count of punctuation marks: 4
+4: Text: proverka1;proverka1
+It is an aphorism. Author: not_me
+Count of punctuation marks: 1
 Empty container. 
 Container contents 0 elements.
