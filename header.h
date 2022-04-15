@@ -13,13 +13,19 @@ struct saying_wisdom {
 	string text = "";
 	string country = "";
 };
+
+struct riddle_wisdom {
+	string text = "";
+	string answer = "";
+};
 struct wisdom {
-	enum type { aphorism, saying };
+	enum type { aphorism, saying, riddle };
 	type key;
 	union
 	{
 		aphorism_wisdom a;
 		saying_wisdom s;
+		riddle_wisdom r;
 	};
 	~wisdom() {}
 	wisdom() : a() {}
@@ -42,11 +48,14 @@ struct container {
 
 void In(ifstream& ifst, aphorism_wisdom& a);
 void In(ifstream& ifst, saying_wisdom& s);
+void In(ifstream& ifst, riddle_wisdom& r);
 
 void Out(ofstream& ofst, aphorism_wisdom& a);
 void Out(ofstream& ofst, saying_wisdom& s);
+void Out(ofstream& ofst, riddle_wisdom& r);
 
 wisdom* InWisdom(ifstream& ifst);
+void OutWisdom(ofstream& ofst, Node* container);
 void Clear(container* c);
 void InCont(ifstream& ifst, container* c);
 void OutCont(ofstream& ofst, container* c);

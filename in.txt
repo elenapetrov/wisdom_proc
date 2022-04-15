@@ -16,3 +16,6 @@ pushkin
 2
 12345_678910
 Russia
+3
+riddle
+answer
