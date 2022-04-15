@@ -4,18 +4,23 @@ using namespace std;
 void In(ifstream& ifst, aphorism_wisdom& f) {
 	ifst >> f.text;
 	ifst >> f.author;
+	ifst >> f.rate;
 }
 void Out(ofstream& ofst, aphorism_wisdom& f) {
 	ofst << "Text: " << f.text << endl;
 	ofst << "It is an aphorism. Author: " << f.author << endl;
+	ofst << "Subjective assessment of the aphorism on a ten-point scale: " << f.rate << "/10 " << endl;
+
 }
 void In(ifstream& ifst, saying_wisdom& f) {
 	ifst >> f.text;
 	ifst >> f.country;
+	ifst >> f.rate;
 }
 void Out(ofstream& ofst, saying_wisdom& f) {
 	ofst << "Text: " << f.text << endl;
 	ofst << "It is a saying. Country: " << f.country << endl;
+	ofst << "Subjective assessment of the saying on a ten-point scale: " << f.rate << "/10 " << endl;
 }
 
 wisdom* InWisdom(ifstream& ifst) {

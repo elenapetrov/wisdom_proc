@@ -2,15 +2,21 @@ Filled container.
 Container contents 6 elements.
 1: Text: qqqqqqqqq
 It is a saying. Country: Russia
+Subjective assessment of the saying on a ten-point scale: 8/10 
 2: Text: abc
 It is an aphorism. Author: author
+Subjective assessment of the aphorism on a ten-point scale: 7/10 
 3: Text: qwerty
 It is a saying. Country: USA
+Subjective assessment of the saying on a ten-point scale: 8/10 
 4: Text: xyz
 It is an aphorism. Author: author2
+Subjective assessment of the aphorism on a ten-point scale: 9/10 
 5: Text: 12345
 It is an aphorism. Author: pushkin
+Subjective assessment of the aphorism on a ten-point scale: 10/10 
 6: Text: 12345_678910
 It is a saying. Country: Russia
+Subjective assessment of the saying on a ten-point scale: 6/10 
 Empty container. 
 Container contents 0 elements.
