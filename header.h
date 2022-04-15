@@ -51,3 +51,4 @@ void OutWisdom(ofstream& ofst, Node* container);
 void Clear(container* c);
 void InCont(ifstream& ifst, container* c);
 void OutCont(ofstream& ofst, container* c);
+void OutAphorisms(ofstream& ofst, container* c);
