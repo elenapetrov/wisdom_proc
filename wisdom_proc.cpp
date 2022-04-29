@@ -21,6 +21,9 @@ int main(int argc, char* argv[])
 	InCont(ifst, &c);
 	ofst << "Filled container. " << endl;
 	OutCont(ofst, &c);
+	Sort(c);
+	ofst << endl << "Sorted container. " << endl;
+	OutCont(ofst, &c);
 	OutAphorisms(ofst, &c);
 	Clear(&c);
 	ofst << "Empty container. " << endl;

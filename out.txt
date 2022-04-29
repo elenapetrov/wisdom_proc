@@ -1,45 +1,64 @@
 Filled container. 
 Container contents 7 elements.
-1: Text: q.w.e.r.t.y.
-It is a saying. Country: USA
-Subjective assessment of the saying on a ten-point scale: 8/10 
-count of punctuation marks: 6
-2: Text: qqqqqqqqq!!!
-It is a saying. Country: Russia
-Subjective assessment of the saying on a ten-point scale: 8/10 
+1: It is a saying. Country: Russia
+Subjective assessment of the riddle on a ten-point scale: 8/10 
 count of punctuation marks: 3
-3: Text: x,y,z
-It is an aphorism. Author: author2
-Subjective assessment of the aphorism on a ten-point scale: 9/10 
+2: It is an aphorism. Author: author
+Subjective assessment of the riddle on a ten-point scale: 7/10 
+count of punctuation marks: 1
+3: It is a saying. Country: USA
+Subjective assessment of the riddle on a ten-point scale: 8/10 
+count of punctuation marks: 6
+4: It is an aphorism. Author: author2
+Subjective assessment of the riddle on a ten-point scale: 9/10 
 count of punctuation marks: 2
-4: Text: abc?
-It is an aphorism. Author: author
-Subjective assessment of the aphorism on a ten-point scale: 7/10 
+5: It is an aphorism. Author: pushkin
+Subjective assessment of the riddle on a ten-point scale: 10/10 
 count of punctuation marks: 1
-5: Text: 12345.
-It is an aphorism. Author: pushkin
-Subjective assessment of the aphorism on a ten-point scale: 10/10 
-count of punctuation marks: 1
-6: Text: 12345_678910
-It is a saying. Country: Russia
-Subjective assessment of the saying on a ten-point scale: 6/10 
+6: It is a saying. Country: Russia
+Subjective assessment of the riddle on a ten-point scale: 6/10 
 count of punctuation marks: 0
-7: Text: zagadka
-It is a riddle. Answer: answer
+7: It is a riddle. Answer: answer
+Subjective assessment of the riddle on a ten-point scale: 7/10 
+count of punctuation marks: 0
+
+Sorted container. 
+Container contents 7 elements.
+1: It is a saying. Country: USA
+Subjective assessment of the riddle on a ten-point scale: 8/10 
+count of punctuation marks: 6
+2: It is a saying. Country: Russia
+Subjective assessment of the riddle on a ten-point scale: 8/10 
+count of punctuation marks: 3
+3: It is an aphorism. Author: author2
+Subjective assessment of the riddle on a ten-point scale: 9/10 
+count of punctuation marks: 2
+4: It is an aphorism. Author: author
+Subjective assessment of the riddle on a ten-point scale: 7/10 
+count of punctuation marks: 1
+5: It is an aphorism. Author: pushkin
+Subjective assessment of the riddle on a ten-point scale: 10/10 
+count of punctuation marks: 1
+6: It is a saying. Country: Russia
+Subjective assessment of the riddle on a ten-point scale: 6/10 
+count of punctuation marks: 0
+7: It is a riddle. Answer: answer
+Subjective assessment of the riddle on a ten-point scale: 7/10 
+count of punctuation marks: 0
 Only Aphorisms: 
 1: 
 2: 
 3: Text: x,y,z
 It is an aphorism. Author: author2
-Subjective assessment of the aphorism on a ten-point scale: 9/10 
+Subjective assessment of the riddle on a ten-point scale: 9/10 
 count of punctuation marks: 2
 4: Text: abc?
 It is an aphorism. Author: author
-Subjective assessment of the aphorism on a ten-point scale: 7/10 
+Subjective assessment of the riddle on a ten-point scale: 7/10 
 count of punctuation marks: 1
 5: Text: 12345.
 It is an aphorism. Author: pushkin
-Subjective assessment of the aphorism on a ten-point scale: 10/10 
+Subjective assessment of the riddle on a ten-point scale: 10/10 
 count of punctuation marks: 1
 6: 
 7: 

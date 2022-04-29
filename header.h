@@ -5,24 +5,21 @@
 using namespace std;
 
 struct aphorism_wisdom {
-	string text = "";
 	string author = "";
-	int rate = 0;
 };
 
 struct saying_wisdom {
-	string text = "";
 	string country = "";
-	int rate = 0;
 };
 
 struct riddle_wisdom {
-	string text = "";
 	string answer = "";
 };
 struct wisdom {
 	enum type { aphorism, saying, riddle };
 	type key;
+	string text = "";
+	int rate = 0;
 	union
 	{
 		aphorism_wisdom a;
@@ -56,12 +53,7 @@ void Out(ofstream& ofst, aphorism_wisdom& a);
 void Out(ofstream& ofst, saying_wisdom& s);
 void Out(ofstream& ofst, riddle_wisdom& r);
 
-int CountSymbolsAphorism(ofstream& ofst, aphorism_wisdom& a);
-int CountSymbols(aphorism_wisdom& a);
-int CountSymbolsSaying(ofstream& ofst, saying_wisdom& a);
-int CountSymbols(saying_wisdom& a);
-int CountSymbolsRiddle(ofstream& ofst, riddle_wisdom& a);
-int CountSymbols(riddle_wisdom& a);
+int CountSymbols(wisdom& a);
 
 wisdom* InWisdom(ifstream& ifst);
 void OutWisdom(ofstream& ofst, Node* container);

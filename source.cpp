@@ -2,32 +2,22 @@
 using namespace std;
 
 void In(ifstream& ifst, aphorism_wisdom& f) {
-	ifst >> f.text;
+
 	ifst >> f.author;
-	ifst >> f.rate;
 }
 void Out(ofstream& ofst, aphorism_wisdom& f) {
-	ofst << "Text: " << f.text << endl;
 	ofst << "It is an aphorism. Author: " << f.author << endl;
-	ofst << "Subjective assessment of the aphorism on a ten-point scale: " << f.rate << "/10 " << endl;
-
 }
 void In(ifstream& ifst, saying_wisdom& f) {
-	ifst >> f.text;
 	ifst >> f.country;
-	ifst >> f.rate;
 }
 void Out(ofstream& ofst, saying_wisdom& f) {
-	ofst << "Text: " << f.text << endl;
 	ofst << "It is a saying. Country: " << f.country << endl;
-	ofst << "Subjective assessment of the saying on a ten-point scale: " << f.rate << "/10 " << endl;
 }
 void In(ifstream& ifst, riddle_wisdom& f) {
-	ifst >> f.text;
 	ifst >> f.answer;
 }
 void Out(ofstream& ofst, riddle_wisdom& f) {
-	ofst << "Text: " << f.text << endl;
 	ofst << "It is a riddle. Answer: " << f.answer << endl;
 }
 
@@ -41,21 +31,25 @@ wisdom* InWisdom(ifstream& ifst) {
 	case 1:
 		sh = new wisdom;
 		sh->key = wisdom::type::aphorism;
+		ifst >> sh->text;
 		In(ifst, sh->a);
 		break;
 	case 2:
 		sh = new wisdom;
 		sh->key = wisdom::type::saying;
+		ifst >> sh->text;
 		In(ifst, sh->s);
 		break;
 	case 3:
 		sh = new wisdom;
 		sh->key = wisdom::type::riddle;
+		ifst >> sh->text;
 		In(ifst, sh->s);
 		break;
 	default:
 		return 0;
 	}
+	ifst >> sh->rate;
 	return sh;
 }
 void OutWisdom(ofstream& ofst, Node* container)
@@ -66,7 +60,6 @@ void OutWisdom(ofstream& ofst, Node* container)
 		//aw = (aphorism_wisdom*)(c->current->thought->aphorism);
 		//aw = (aphorism_wisdom*)(c->current->thought);
 		Out(ofst, container->thought->a);
-		CountSymbolsAphorism(ofst, container->thought->a);
 	}
 	else if (container->thought->key == wisdom::type::saying)
 	{
@@ -74,12 +67,13 @@ void OutWisdom(ofstream& ofst, Node* container)
 		//sw = (saying_wisdom*)(c->current->thought->saying);
 		//sw = (saying_wisdom*)(c->current->thought);
 		Out(ofst, container->thought->s);
-		CountSymbolsSaying(ofst, container->thought->s);
 	}
 	else
 	{
 		Out(ofst, container->thought->r);
 	}
+	ofst << "Subjective assessment of the riddle on a ten-point scale: " << container->thought->rate << "/10 " << endl;
+	ofst << "count of punctuation marks: " << CountSymbols(*container->thought) << endl;
 }
 
 void Clear(container* c) {
@@ -125,7 +119,7 @@ void OutCont(ofstream& ofst, container* c) {
 	{
 		return;
 	}
-	Sort(*c);
+	//Sort(*c);
 	c->current = c->head;
 	do
 	{
@@ -135,88 +129,20 @@ void OutCont(ofstream& ofst, container* c) {
 		i++;
 	} while (c->current != c->head);
 }
-int CountSymbolsAphorism(ofstream& ofst, aphorism_wisdom& a) {
+
+int CountSymbols(wisdom& s) {
 	int cnt = 0;
 	string symbols = ".,!?;";
-	for (int i = 0; i < a.text.length(); i++)
+	for (int i = 0; i < s.text.length(); i++)
 	{
-		if (symbols.find(a.text[i]) < symbols.length())cnt++;
-	}
-	ofst << "count of punctuation marks: " << cnt << endl;
-	return cnt;
-}
-int CountSymbols(aphorism_wisdom& a) {
-	int cnt = 0;
-	string symbols = ".,!?;";
-	for (int i = 0; i < a.text.length(); i++)
-	{
-		if (symbols.find(a.text[i]) < symbols.length())cnt++;
+		if (symbols.find(s.text[i]) < symbols.length())cnt++;
 	}
 	return cnt;
 }
 
-int CountSymbolsSaying(ofstream& ofst, saying_wisdom& s) {
-	int cnt = 0;
-	string symbols = ".,!?;";
-	for (int i = 0; i < s.text.length(); i++)
-	{
-		if (symbols.find(s.text[i]) < symbols.length())cnt++;
-	}
-	ofst << "count of punctuation marks: " << cnt << endl;
-	return cnt;
-}
-int CountSymbols(saying_wisdom& s) {
-	int cnt = 0;
-	string symbols = ".,!?;";
-	for (int i = 0; i < s.text.length(); i++)
-	{
-		if (symbols.find(s.text[i]) < symbols.length())cnt++;
-	}
-	return cnt;
-}
-int CountSymbolsRiddle(ofstream& ofst, riddle_wisdom& a)
-{
-	int cnt = 0;
-	string symbols = ".,!?;";
-	for (int i = 0; i < a.text.length(); i++)
-	{
-		if (symbols.find(a.text[i]) < symbols.length())cnt++;
-	}
-	ofst << "count of punctuation marks: " << cnt << endl;
-	return cnt;
-}
-int CountSymbols(riddle_wisdom& a)
-{
-	int cnt = 0;
-	string symbols = ".,!?;";
-	for (int i = 0; i < a.text.length(); i++)
-	{
-		if (symbols.find(a.text[i]) < symbols.length())cnt++;
-	}
-	return cnt;
-}
 bool Compare(Node* w1, Node* w2)
 {
-	//return CountSymbols(*w1->thought) < CountSymbols(*w2->thought);
-	int tmp1 = 0;
-	int tmp2 = 0;
-	if (w1->thought->key == wisdom::type::aphorism)
-	{
-		tmp1 = CountSymbols(w1->thought->a);
-	}
-	else
-	{
-		tmp1 = CountSymbols(w1->thought->s);
-	}
-	if (w2->thought->key == wisdom::type::aphorism)
-	{
-		tmp2 = CountSymbols(w2->thought->a);
-	}
-	else
-	{
-		tmp2 = CountSymbols(w2->thought->s);
-	}
-	return tmp1 < tmp2;
+	return CountSymbols(*w1->thought) < CountSymbols(*w2->thought);
 }
 void Sort(container& c)
 {
@@ -248,6 +174,7 @@ void OutAphorisms(ofstream& ofst, container* c)
 		ofst << i << ": ";
 		if (c->current->thought->key == wisdom::type::aphorism)
 		{
+			ofst << "Text: " << c->current->thought->text << endl;
 			OutWisdom(ofst, c->current);
 		}
 		else
