@@ -1,1 +1,2 @@
 C:\Users\Елена\Documents\GitHub\wisdom_proc\x64\Debug\wisdom_proc.exe
+C:\Users\Shele\Documents\GitHub\wisdom_proc\x64\Debug\wisdom_proc.exe

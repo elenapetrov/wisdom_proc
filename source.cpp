@@ -174,6 +174,27 @@ int CountSymbols(saying_wisdom& s) {
 	}
 	return cnt;
 }
+int CountSymbolsRiddle(ofstream& ofst, riddle_wisdom& a)
+{
+	int cnt = 0;
+	string symbols = ".,!?;";
+	for (int i = 0; i < a.text.length(); i++)
+	{
+		if (symbols.find(a.text[i]) < symbols.length())cnt++;
+	}
+	ofst << "count of punctuation marks: " << cnt << endl;
+	return cnt;
+}
+int CountSymbols(riddle_wisdom& a)
+{
+	int cnt = 0;
+	string symbols = ".,!?;";
+	for (int i = 0; i < a.text.length(); i++)
+	{
+		if (symbols.find(a.text[i]) < symbols.length())cnt++;
+	}
+	return cnt;
+}
 bool Compare(Node* w1, Node* w2)
 {
 	//return CountSymbols(*w1->thought) < CountSymbols(*w2->thought);

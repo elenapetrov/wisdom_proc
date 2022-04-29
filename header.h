@@ -60,6 +60,8 @@ int CountSymbolsAphorism(ofstream& ofst, aphorism_wisdom& a);
 int CountSymbols(aphorism_wisdom& a);
 int CountSymbolsSaying(ofstream& ofst, saying_wisdom& a);
 int CountSymbols(saying_wisdom& a);
+int CountSymbolsRiddle(ofstream& ofst, riddle_wisdom& a);
+int CountSymbols(riddle_wisdom& a);
 
 wisdom* InWisdom(ifstream& ifst);
 void OutWisdom(ofstream& ofst, Node* container);
