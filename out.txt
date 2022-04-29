@@ -1,5 +1,5 @@
 Filled container. 
-Container contents 6 elements.
+Container contents 7 elements.
 1: Text: qqqqqqqqq
 It is a saying. Country: Russia
 2: Text: abc
@@ -12,5 +12,7 @@ It is an aphorism. Author: author2
 It is an aphorism. Author: pushkin
 6: Text: 12345_678910
 It is a saying. Country: Russia
+7: Text: riddle
+It is a riddle. Answer: answer
 Empty container. 
 Container contents 0 elements.

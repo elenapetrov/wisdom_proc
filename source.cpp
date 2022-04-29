@@ -17,6 +17,14 @@ void Out(ofstream& ofst, saying_wisdom& f) {
 	ofst << "Text: " << f.text << endl;
 	ofst << "It is a saying. Country: " << f.country << endl;
 }
+void In(ifstream& ifst, riddle_wisdom& f) {
+	ifst >> f.text;
+	ifst >> f.answer;
+}
+void Out(ofstream& ofst, riddle_wisdom& f) {
+	ofst << "Text: " << f.text << endl;
+	ofst << "It is a riddle. Answer: " << f.answer << endl;
+}
 
 wisdom* InWisdom(ifstream& ifst) {
 	wisdom* sh;
@@ -35,6 +43,11 @@ wisdom* InWisdom(ifstream& ifst) {
 		sh->key = wisdom::type::saying;
 		In(ifst, sh->s);
 		break;
+	case 3:
+		sh = new wisdom;
+		sh->key = wisdom::type::riddle;
+		In(ifst, sh->s);
+		break;
 	default:
 		return 0;
 	}
@@ -49,12 +62,16 @@ void OutWisdom(ofstream& ofst, Node* container)
 		//aw = (aphorism_wisdom*)(c->current->thought);
 		Out(ofst, container->thought->a);
 	}
-	else
+	else if (container->thought->key == wisdom::type::saying)
 	{
 		//saying_wisdom* sw;
 		//sw = (saying_wisdom*)(c->current->thought->saying);
 		//sw = (saying_wisdom*)(c->current->thought);
 		Out(ofst, container->thought->s);
+	}
+	else
+	{
+		Out(ofst, container->thought->r);
 	}
 }
 
