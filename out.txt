@@ -26,5 +26,22 @@ Subjective assessment of the saying on a ten-point scale: 6/10
 count of punctuation marks: 0
 7: Text: zagadka
 It is a riddle. Answer: answer
+Only Aphorisms: 
+1: 
+2: 
+3: Text: x,y,z
+It is an aphorism. Author: author2
+Subjective assessment of the aphorism on a ten-point scale: 9/10 
+count of punctuation marks: 2
+4: Text: abc?
+It is an aphorism. Author: author
+Subjective assessment of the aphorism on a ten-point scale: 7/10 
+count of punctuation marks: 1
+5: Text: 12345.
+It is an aphorism. Author: pushkin
+Subjective assessment of the aphorism on a ten-point scale: 10/10 
+count of punctuation marks: 1
+6: 
+7: 
 Empty container. 
 Container contents 0 elements.
