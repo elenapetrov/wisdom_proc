@@ -234,3 +234,27 @@ void Sort(container& c)
 		curr1 = curr1->next;
 	} while (curr1 != c.head);
 }
+void OutAphorisms(ofstream& ofst, container* c)
+{
+	ofst << "Only Aphorisms: " << endl;
+	int i = 1;
+	if (c->head == NULL)
+	{
+		return;
+	}
+	c->current = c->head;
+	do
+	{
+		ofst << i << ": ";
+		if (c->current->thought->key == wisdom::type::aphorism)
+		{
+			OutWisdom(ofst, c->current);
+		}
+		else
+		{
+			ofst << endl;
+		}
+		c->current = c->current->next;
+		i++;
+	} while (c->current != c->head);
+}
