@@ -66,6 +66,7 @@ void OutWisdom(ofstream& ofst, Node* container)
 		//aw = (aphorism_wisdom*)(c->current->thought->aphorism);
 		//aw = (aphorism_wisdom*)(c->current->thought);
 		Out(ofst, container->thought->a);
+		CountSymbolsAphorism(ofst, container->thought->a);
 	}
 	else if (container->thought->key == wisdom::type::saying)
 	{
@@ -73,6 +74,7 @@ void OutWisdom(ofstream& ofst, Node* container)
 		//sw = (saying_wisdom*)(c->current->thought->saying);
 		//sw = (saying_wisdom*)(c->current->thought);
 		Out(ofst, container->thought->s);
+		CountSymbolsSaying(ofst, container->thought->s);
 	}
 	else
 	{
@@ -123,6 +125,7 @@ void OutCont(ofstream& ofst, container* c) {
 	{
 		return;
 	}
+	Sort(*c);
 	c->current = c->head;
 	do
 	{
@@ -131,4 +134,82 @@ void OutCont(ofstream& ofst, container* c) {
 		c->current = c->current->next;
 		i++;
 	} while (c->current != c->head);
+}
+int CountSymbolsAphorism(ofstream& ofst, aphorism_wisdom& a) {
+	int cnt = 0;
+	string symbols = ".,!?;";
+	for (int i = 0; i < a.text.length(); i++)
+	{
+		if (symbols.find(a.text[i]) < symbols.length())cnt++;
+	}
+	ofst << "count of punctuation marks: " << cnt << endl;
+	return cnt;
+}
+int CountSymbols(aphorism_wisdom& a) {
+	int cnt = 0;
+	string symbols = ".,!?;";
+	for (int i = 0; i < a.text.length(); i++)
+	{
+		if (symbols.find(a.text[i]) < symbols.length())cnt++;
+	}
+	return cnt;
+}
+
+int CountSymbolsSaying(ofstream& ofst, saying_wisdom& s) {
+	int cnt = 0;
+	string symbols = ".,!?;";
+	for (int i = 0; i < s.text.length(); i++)
+	{
+		if (symbols.find(s.text[i]) < symbols.length())cnt++;
+	}
+	ofst << "count of punctuation marks: " << cnt << endl;
+	return cnt;
+}
+int CountSymbols(saying_wisdom& s) {
+	int cnt = 0;
+	string symbols = ".,!?;";
+	for (int i = 0; i < s.text.length(); i++)
+	{
+		if (symbols.find(s.text[i]) < symbols.length())cnt++;
+	}
+	return cnt;
+}
+bool Compare(Node* w1, Node* w2)
+{
+	//return CountSymbols(*w1->thought) < CountSymbols(*w2->thought);
+	int tmp1 = 0;
+	int tmp2 = 0;
+	if (w1->thought->key == wisdom::type::aphorism)
+	{
+		tmp1 = CountSymbols(w1->thought->a);
+	}
+	else
+	{
+		tmp1 = CountSymbols(w1->thought->s);
+	}
+	if (w2->thought->key == wisdom::type::aphorism)
+	{
+		tmp2 = CountSymbols(w2->thought->a);
+	}
+	else
+	{
+		tmp2 = CountSymbols(w2->thought->s);
+	}
+	return tmp1 < tmp2;
+}
+void Sort(container& c)
+{
+	Node* curr1 = c.head;
+	Node* curr2 = c.head;
+	do {
+		curr2 = curr1->next;
+		while (curr2 != c.head) {
+			if (Compare(curr1, curr2))
+			{
+				swap(curr1->thought, curr2->thought);
+			}
+			curr2 = curr2->next;
+		}
+		curr1 = curr1->next;
+	} while (curr1 != c.head);
 }
