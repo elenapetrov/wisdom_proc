@@ -7,11 +7,13 @@ using namespace std;
 struct aphorism_wisdom {
 	string text = "";
 	string author = "";
+	int rate = 0;
 };
 
 struct saying_wisdom {
 	string text = "";
 	string country = "";
+	int rate = 0;
 };
 
 struct riddle_wisdom {
